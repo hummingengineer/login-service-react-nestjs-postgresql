@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled, { keyframes } from "styled-components";
+import fetchGraphQL from "../../utils/fetchGraphQL";
 
 export default function App() {
+  const handleFormSubmit = useCallback(
+    async (event: React.FormEvent<HTMLFormElement>) => {
+      const res = await fetchGraphQL("");
+      console.log(res);
+      event.preventDefault();
+    },
+    []
+  );
+
   return (
     <Container>
-      <LoginForm>
+      <LoginForm onSubmit={handleFormSubmit}>
         <Input type="text" placeholder="Username" />
         <Input type="password" placeholder="Password" />
 
