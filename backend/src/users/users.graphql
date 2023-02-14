@@ -1,11 +1,11 @@
 type User {
-  id: String!;
+  email: String!;
   password: String!;
 }
 
 input CreateUserInput {
-  # Example field (placeholder)
-  exampleField: Int
+  email: String!;
+  password: String!;
 }
 
 input UpdateUserInput {
