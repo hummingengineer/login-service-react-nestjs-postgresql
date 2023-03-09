@@ -6,7 +6,7 @@ type User {
 
 input CreateUserInput {
   email: String!
-  password: String!;
+  password: String!
 }
 
 input UpdateUserInput {
