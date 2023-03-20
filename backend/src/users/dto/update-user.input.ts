@@ -1,6 +1,8 @@
 import { CreateUserInput } from './create-user.input';
-import { PartialType } from '@nestjs/mapped-types';
+import { PartialType, OmitType } from '@nestjs/mapped-types';
 
-export class UpdateUserInput extends PartialType(CreateUserInput) {
+export class UpdateUserInput extends PartialType(
+  OmitType(CreateUserInput, ['email'] as const),
+) {
   id: string;
 }
