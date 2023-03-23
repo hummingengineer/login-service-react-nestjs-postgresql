@@ -5,7 +5,9 @@ import fetchGraphQL from "../../utils/fetchGraphQL";
 export default function App() {
   const handleFormSubmit = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
-      const query = `{}`;
+      const query = `{
+        findAll()
+      }`;
       const res = await fetchGraphQL(query);
       console.log(res);
       event.preventDefault();
