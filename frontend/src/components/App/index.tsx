@@ -6,7 +6,7 @@ export default function App() {
   const handleFormSubmit = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       const query = `{
-        remove(id: 9)
+        findOne(id: 2)
       }`;
       const res = await fetchGraphQL(query);
       console.log(res);
